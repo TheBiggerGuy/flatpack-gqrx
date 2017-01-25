@@ -1,14 +1,15 @@
-dist: trusty
 sudo: required
+
+services:
+  - docker
+
 before_install:
-  - sudo add-apt-repository -y ppa:alexlarsson/flatpak
-  - sudo apt-get -q update
-  - sudo apt-get install flatpack
+  - docker pull gbraad/flatpak
 
 install:
-  - make remotes
-  - make deps
+  - docker run -it --volume=$(pwd):/data:rw gbraad/flatpak 'make --directory=/data remotes'
+  - docker run -it --volume=$(pwd):/data:rw gbraad/flatpak 'make --directory=/data deps'
 
 script:
-  - make build
-  - make bundle
+  - docker run -it --volume=$(pwd):/data:rw gbraad/flatpak 'make --directory=/data build'
+  - docker run -it --volume=$(pwd):/data:rw gbraad/flatpak 'make --directory=/data bundle'

@@ -1,0 +1,22 @@
+{
+  "name": "libhackrf",
+  "cmake": true,
+  "config-opts": [
+    "-DCMAKE_BUILD_TYPE=Release",
+    "-DENABLE_TESTING:BOOL=OFF",
+    "-DCMAKE_INSTALL_LIBDIR=lib"
+  ],
+  "make-args": [
+    "-j4"
+  ],
+  "sources": [
+    {
+      "type": "git",
+      "url": "https://github.com/mossmann/hackrf.git"
+    }
+  ],
+  "subdir": "host/libhackrf",
+  "modules": [
+    "libusb.json"
+  ]
+}

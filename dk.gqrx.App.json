@@ -1,0 +1,38 @@
+{
+  "app-id": "dk.gqrx.App",
+  "branch": "master",
+  "runtime": "org.kde.Platform",
+  "runtime-version": "master",
+  "sdk": "org.kde.Sdk",
+  "command": "gqrx",
+  "finish-args": [
+    "--socket=x11",
+    "--socket=pulseaudio"
+  ],
+  "modules": [
+    "boost.json",
+    {
+      "name": "gqrx",
+      "cmake": true,
+      "config-opts": [
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DENABLE_TESTING:BOOL=OFF",
+        "-DCMAKE_INSTALL_LIBDIR=lib"
+      ],
+      "make-args": [
+        "-j4"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/csete/gqrx/releases/download/v2.6/gqrx-sdr-2.6-src.tar.xz",
+          "sha256": "a82bdd3cd60640b9bc18cc8528e2f7449b5ce68710054a3022c4200b3228581a"
+        }
+      ],
+      "modules": [
+        "gnuradio.json",
+        "libhackrf.json"
+      ]
+    }
+  ]
+}

@@ -7,17 +7,20 @@
   "command": "gqrx",
   "finish-args": [
     "--socket=x11",
-    "--socket=pulseaudio"
+    "--socket=wayland",
+    "--socket=pulseaudio",
+    "--filesystem=home:rw",
+    "--share=ipc",
+    "--device=dri"
   ],
   "modules": [
     "boost.json",
+    "libusb.json",
     {
       "name": "gqrx",
       "cmake": true,
       "config-opts": [
-        "-DCMAKE_BUILD_TYPE=Release",
-        "-DENABLE_TESTING:BOOL=OFF",
-        "-DCMAKE_INSTALL_LIBDIR=lib"
+        "-DCMAKE_BUILD_TYPE=Release"
       ],
       "make-args": [
         "-j4"
@@ -31,7 +34,26 @@
       ],
       "modules": [
         "gnuradio.json",
-        "libhackrf.json"
+        {
+          "name": "gr-osmosdr",
+          "cmake": true,
+          "config-opts": [
+            "-DCMAKE_BUILD_TYPE=Release",
+            "-DENABLE_PYTHON:BOOL=OFF"
+          ],
+          "make-args": [
+            "-j4"
+          ],
+          "sources": [
+            {
+              "type": "git",
+              "url": "git://git.osmocom.org/gr-osmosdr"
+            }
+          ],
+          "modules": [
+            "libhackrf.json"
+          ]
+        }
       ]
     }
   ]

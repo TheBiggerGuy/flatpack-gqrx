@@ -7,12 +7,30 @@
     "-DENABLE_TESTING:BOOL=OFF",
     "-DCMAKE_INSTALL_LIBDIR=lib",
     "-DENABLE_INTERNAL_VOLK:BOOL=OFF",
+    "-DENABLE_GR_CTRLPORT:BOOL=OFF",
+    "-DENABLE_SPHINX:BOOL=OFF",
+    "-DENABLE_PYTHON:BOOL=OFF",
+    "-DENABLE_GRC:BOOL=OFF",
     "-DENABLE_GR_ANALOG:BOOL=ON",
     "-DENABLE_GR_AUDIO:BOOL=ON",
     "-DENABLE_GR_BLOCKS:BOOL=ON",
+    "-DENABLE_GR_CHANNELS:BOOL=OFF",
+    "-DENABLE_GR_COMEDI:BOOL=OFF",
     "-DENABLE_GR_DIGITAL:BOOL=ON",
+    "-DENABLE_GR_DTV:BOOL=OFF",
+    "-DENABLE_GR_FCD:BOOL=ON",
+    "-DENABLE_GR_FEC:BOOL=OFF",
+    "-DENABLE_GR_FFT:BOOL=ON",
     "-DENABLE_GR_FILTER:BOOL=ON",
-    "-DENABLE_GR_FFT:BOOL=ON"
+    "-DENABLE_GR_NOAA:BOOL=OFF",
+    "-DENABLE_GR_QTGUI:BOOL=OFF",
+    "-DENABLE_GR_TRELLIS:BOOL=OFF",
+    "-DENABLE_GR_UHD:BOOL=OFF",
+    "-DENABLE_GR_UTILS:BOOL=OFF",
+    "-DENABLE_GR_VIDEO_SDL:BOOL=OFF",
+    "-DENABLE_GR_VOCODER:BOOL=OFF",
+    "-DENABLE_GR_WAVELET:BOOL=OFF",
+    "-DENABLE_GR_ZEROMQ:BOOL=OFF"
   ],
   "make-args": [
     "-j4"
@@ -25,25 +43,8 @@
     }
   ],
   "modules": [
-    "swig.json",
     "volk.json",
-    {
-      "name": "lxml",
-      "no-autogen": true,
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://pypi.python.org/packages/66/45/f11fc376f784c6f2e77ffc7a9d02374ff3ceb07ede8c56f918939409577c/lxml-3.7.2.tar.gz",
-          "sha256": "59d9176360dbc3919e9d4bfca85c1ca64ab4f4ee00e6f119d7150ba887e3410a"
-        },
-        {
-          "type": "shell",
-          "commands": [
-            "echo 'all:\n\ninstall:\n\tpython ./setup.py install --prefix=/app' > makefile"
-          ]
-        }
-      ]
-    },
+    "uhd.json",
     {
       "name": "fftw",
       "config-opts": [

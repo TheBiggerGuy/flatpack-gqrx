@@ -4,7 +4,7 @@
     "https://github.com/gnuradio/volk/blob/master/cmake/Modules/VolkBoost.cmake#L29",
     "https://github.com/gnuradio/gnuradio/blob/master/cmake/Modules/GrBoost.cmake#L29",
     "https://github.com/csete/gqrx/blob/master/CMakeLists.txt#L102",
-    "SWIG ??"
+    "https://git.osmocom.org/gr-osmosdr/tree/CMakeLists.txt#n103"
   ],
   "config-opts": [
     "--with-libraries=filesystem,system,test,program_options,date_time,regex,thread"

@@ -1,5 +1,6 @@
 {
-  "name": "libhackrf",
+  "name": "uhd",
+  "disabled": true,
   "cmake": true,
   "config-opts": [
     "-DCMAKE_BUILD_TYPE=Release"
@@ -10,8 +11,8 @@
   "sources": [
     {
       "type": "git",
-      "url": "https://github.com/mossmann/hackrf.git"
+      "url": "https://github.com/EttusResearch/uhd.git"
     }
   ],
-  "subdir": "host/libhackrf"
+  "subdir": "host"
 }

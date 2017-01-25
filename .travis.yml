@@ -7,7 +7,7 @@ before_install:
   - docker pull gbraad/flatpak
 
 install:
-  - docker run -it --volume=$TRAVIS_BUILD_DIR:/data:rw gbraad/flatpak sh -c 'dnf install make'
+  - docker run -it --volume=$TRAVIS_BUILD_DIR:/data:rw gbraad/flatpak sh -c 'dnf --assumeyes install make'
   - docker run -it --volume=$TRAVIS_BUILD_DIR:/data:rw gbraad/flatpak sh -c 'ls -ahls /data'
   - docker run -it --volume=$TRAVIS_BUILD_DIR:/data:rw gbraad/flatpak sh -c 'make --directory=/data remotes'
   - docker run -it --volume=$TRAVIS_BUILD_DIR:/data:rw gbraad/flatpak sh -c 'make --directory=/data deps'

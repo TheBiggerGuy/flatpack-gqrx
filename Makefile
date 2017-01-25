@@ -15,7 +15,7 @@ run:
 	flatpak-builder --run app dk.gqrx.App.json gqrx
 
 run-gdb:
-	flatpak-builder --run app dk.gqrx.App.json gdb gqrx
+	flatpak-builder --run ---allow=devel app dk.gqrx.App.json gdb gqrx
 
 remotes:
 	wget http://distribute.kde.org/kdeflatpak.asc

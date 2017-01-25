@@ -1,6 +1,6 @@
 {
   "name": "volk",
-  "cmake": true,
+  "buildsystem": "cmake",
   "config-opts": [
     "-DCMAKE_BUILD_TYPE=Release",
     "-DENABLE_TESTING:BOOL=OFF",

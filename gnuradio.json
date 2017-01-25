@@ -1,6 +1,6 @@
 {
   "name": "gnuradio",
-  "cmake": true,
+  "buildsystem": "cmake",
   "_comment": "https://github.com/csete/gqrx/blob/master/CMakeLists.txt#L103",
   "config-opts": [
     "-DCMAKE_BUILD_TYPE=Release",

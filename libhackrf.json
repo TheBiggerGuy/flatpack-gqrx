@@ -1,6 +1,6 @@
 {
   "name": "libhackrf",
-  "cmake": true,
+  "buildsystem": "cmake",
   "config-opts": [
     "-DCMAKE_BUILD_TYPE=Release"
   ],

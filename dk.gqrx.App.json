@@ -18,7 +18,7 @@
     "libusb.json",
     {
       "name": "gqrx",
-      "cmake": true,
+      "buildsystem": "cmake",
       "config-opts": [
         "-DCMAKE_BUILD_TYPE=Release"
       ],
@@ -36,7 +36,7 @@
         "gnuradio.json",
         {
           "name": "gr-osmosdr",
-          "cmake": true,
+          "buildsystem": "cmake",
           "config-opts": [
             "-DCMAKE_BUILD_TYPE=Release",
             "-DENABLE_PYTHON:BOOL=OFF"

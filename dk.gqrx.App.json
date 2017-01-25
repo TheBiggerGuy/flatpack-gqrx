@@ -19,6 +19,7 @@
     {
       "name": "gqrx",
       "buildsystem": "cmake",
+      "cmake": true,
       "config-opts": [
         "-DCMAKE_BUILD_TYPE=Release"
       ],
@@ -37,6 +38,7 @@
         {
           "name": "gr-osmosdr",
           "buildsystem": "cmake",
+          "cmake": true,
           "config-opts": [
             "-DCMAKE_BUILD_TYPE=Release",
             "-DENABLE_PYTHON:BOOL=OFF"

@@ -1,0 +1,12 @@
+sudo: false
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y flatpack
+
+install:
+  - make remotes
+  - make deps
+
+script:
+  - make build
+  - make bundle

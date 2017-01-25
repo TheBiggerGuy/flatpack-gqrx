@@ -7,11 +7,11 @@ before_install:
   - docker pull gbraad/flatpak
 
 install:
-  - docker run -it --volume=$(pwd):/data:rw gbraad/flatpak 'ls -ahls /'
-  - docker run -it --volume=$(pwd):/data:rw gbraad/flatpak 'ls -ahls /data'
-  - docker run -it --volume=$(pwd):/data:rw gbraad/flatpak 'make --directory=/data remotes'
-  - docker run -it --volume=$(pwd):/data:rw gbraad/flatpak 'make --directory=/data deps'
+  - docker run -it --volume=$TRAVIS_BUILD_DIR:/data:rw gbraad/flatpak 'ls -ahls /'
+  - docker run -it --volume=$TRAVIS_BUILD_DIR:/data:rw gbraad/flatpak 'ls -ahls /data'
+  - docker run -it --volume=$TRAVIS_BUILD_DIR:/data:rw gbraad/flatpak 'make --directory=/data remotes'
+  - docker run -it --volume=$TRAVIS_BUILD_DIR:/data:rw gbraad/flatpak 'make --directory=/data deps'
 
 script:
-  - docker run -it --volume=$(pwd):/data:rw gbraad/flatpak 'make --directory=/data build'
-  - docker run -it --volume=$(pwd):/data:rw gbraad/flatpak 'make --directory=/data bundle'
+  - docker run -it --volume=$TRAVIS_BUILD_DIR:/data:rw gbraad/flatpak 'make --directory=/data build'
+  - docker run -it --volume=$TRAVIS_BUILD_DIR:/data:rw gbraad/flatpak 'make --directory=/data bundle'

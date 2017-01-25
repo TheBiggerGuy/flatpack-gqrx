@@ -10,7 +10,7 @@ install:
   - docker run -it -d --volume=$TRAVIS_BUILD_DIR:/data:rw gbraad/flatpak sh
   - docker exec -it $(docker ps --format '{{.ID}}' --latest) dnf --assumeyes install make wget
   - docker exec -it $(docker ps --format '{{.ID}}' --latest) ls -ahls /data
-  - docker exec -it $(docker ps --format '{{.ID}}' --latest) make --directory=/data remotes
+  - docker exec -it $(docker ps --format '{{.ID}}' --latest) script /dev/null -c 'make --directory=/data remotes'
   - docker exec -it $(docker ps --format '{{.ID}}' --latest) make --directory=/data deps
 
 script:

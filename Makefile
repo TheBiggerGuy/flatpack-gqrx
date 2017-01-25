@@ -42,7 +42,7 @@ run-builder-gdb:
 
 remotes:
 	wget http://distribute.kde.org/kdeflatpak.asc
-	flatpak remote-add kde http://distribute.kde.org/flatpak-testing/ --gpg-import=kdeflatpak.asc --if-not-exists
+	cat kdeflatpak.asc | flatpak remote-add kde http://distribute.kde.org/flatpak-testing/ --gpg-import=- --if-not-exists | cat -
 	rm kdeflatpak.asc*
 
 deps:
